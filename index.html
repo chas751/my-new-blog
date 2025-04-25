@@ -17,7 +17,17 @@
     }
   </script>
   <style>
-    body<header style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: #f0f0f0;">
+    body<div style="text-align: right; padding: 10px;">
+  <label for="language-select">🌐 Language:</label>
+  <select id="language-select" onchange="changeLanguage()">
+    <option value="en">English</option>
+    <option value="ru">Русский</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="zh">中文</option>
+  </select>
+</div>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: #f0f0f0;">
   <h1 style="margin: 0;">News for Peace</h1>
   <div>
     <button onclick="changeLanguage()" style="padding: 8px 12px;">🌍 Language</button>
