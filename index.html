@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News for Peace</title>
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker зарегистрирован', reg))
+        .catch(err => console.log('Ошибка при регистрации SW', err));
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button, select {
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    select {
+      margin-left: 10px;
+    }
+    main {
+      margin-top: 30px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 18px;
+      color: #444;
+    }
+  </style>
+  <script>
+    function changeLanguage() {
+      const lang = document.getElementById('language-select').value;
+      const messages = {
+        ru: {
+          title: "Новости для мира",
+          text: "Добро пожаловать на новостной сайт о мире во всем мире.",
+          donate: "Поддержите наш проект"
+        },
+        en: {
+          title: "News for Peace",
+          text: "Welcome to the news site about peace around the world.",
+          donate: "Support our project"
+        },
+        de: {
+          title: "Nachrichten für den Frieden",
+          text: "Willkommen auf der Nachrichtenseite über den Frieden in der Welt.",
+          donate: "Unterstützen Sie unser Projekt"
+        },
+        fr: {
+          title: "Nouvelles pour la paix",
+          text: "Bienvenue sur le site d'actualités sur la paix dans le monde.",
+          donate: "Soutenez notre projet"
+        },
+        zh: {
+          title: "和平新闻",
+          text: "欢迎来到关注全球和平的新闻网站。",
+          donate: "支持我们的项目"
+        }
+      };
+
+      const selected = messages[lang];
+      document.getElementById("main-title").textContent = selected.title;
+      document.getElementById("main-text").textContent = selected.text;
+      document.getElementById("donate-title").textContent = selected.donate;
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1 id="main-title">News for Peace</h1>
+    <div>
+      <label for="language-select">🌍</label>
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="zh">中文</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <p id="main-text">Welcome to the news site about peace around the world.</p>
+
+    <section id="donate" style="margin-top: 40px;">
+      <h2 id="donate-title">Support our project</h2>
+      <p>You can donate in USDT (TRC20) using the wallet below:</p>
+      <p><strong>Address:</strong> TErjzxxbTg1uvhEDBzpnvDr2p3g1RRw5Pd</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TErjzxxbTg1uvhEDBzpnvDr2p3g1RRw5Pd" alt="Donate QR Code">
+      <p>Bank: VTB</p>
+      <p>Card number: 2200 2460 3013 9912</p>
+      <p>Thank you for your support!</p>
+    </section>
+  </main>
+
+</body>
+</html>
 
