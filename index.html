@@ -17,7 +17,44 @@
     }
   </script>
   <style>
-    body<div style="text-align: right; padding: 10px;">
+    body<script>
+function changeLanguage() {
+  const lang = document.getElementById('language-select').value;
+  const messages = {
+    ru: {
+      title: "Новости для мира",
+      text: "Добро пожаловать на новостной сайт о мире во всем мире.",
+      donate: "Поддержите наш проект"
+    },
+    en: {
+      title: "News for Peace",
+      text: "Welcome to the news site about peace around the world.",
+      donate: "Support our project"
+    },
+    de: {
+      title: "Nachrichten für den Frieden",
+      text: "Willkommen auf der Nachrichtenseite über den Frieden in der Welt.",
+      donate: "Unterstützen Sie unser Projekt"
+    },
+    fr: {
+      title: "Nouvelles pour la paix",
+      text: "Bienvenue sur le site d'actualités sur la paix dans le monde.",
+      donate: "Soutenez notre projet"
+    },
+    zh: {
+      title: "和平新闻",
+      text: "欢迎来到关注全球和平的新闻网站。",
+      donate: "支持我们的项目"
+    }
+  };
+
+  const selected = messages[lang];
+  document.getElementById("main-title").textContent = selected.title;
+  document.getElementById("main-text").textContent = selected.text;
+  document.getElementById("donate-title").textContent = selected.donate;
+}
+</script>
+<div style="text-align: right; padding: 10px;">
   <label for="language-select">🌐 Language:</label>
   <select id="language-select" onchange="changeLanguage()">
     <option value="en">English</option>
