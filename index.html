@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html lang="ru">
-<link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker зарегистрирован', reg))
-      .catch(err => console.log('Ошибка при регистрации SW', err));
-  }
-</script>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мой блог</title>
-<link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker зарегистрирован', reg))
-      .catch(err => console.log('Ошибка при регистрации SW', err));
-  }
-</script>
+  <title>News for Peace</title>
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker зарегистрирован', reg))
+        .catch(err => console.log('Ошибка при регистрации SW', err));
+    }
+
+    function changeLanguage() {
+      alert("Language switcher will be added soon!");
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    main { padding: 20px; }
+    button { padding: 6px 12px; }
+  </style>
 </head>
 <body>
-  <h1>Добро пожаловать в мой блог!</h1>
-  <p>Здесь будет много интересного.</p>
+  <header>
+    <h1>News for Peace</h1>
+    <button onclick="changeLanguage()">🌍 Languages</button>
+  </header>
+
+  <main>
+    <p>Welcome to the news site for peace in the world.</p>
+    <!-- Здесь будут появляться новости -->
+  </main>
 </body>
 </html>
