@@ -1,1 +1,9 @@
-manifest.json
+{
+  "name": "News for Peace",
+  "short_name": "PeaceNews",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "description": "News site about peace around the world",
+  "icons": []
+}
