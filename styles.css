@@ -1,0 +1,38 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+header {
+  padding: 20px;
+  background-color: #222;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+.donation-box {
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+}
+
+.qr-code {
+  width: 150px;
+  height: 150px;
+}
